@@ -3,8 +3,11 @@
 ##### Table of Contents
 
 [Structure](#Structure) 
+
 [Indexing](#Indexing)  
+
 [Matching](#Matching)
+
 [Evaluate IR Systems](#Evaluate-IR-Systems)  
 
 
