@@ -1,12 +1,10 @@
 # IR-System
 
-##### Table of Contents  
+##### Table of Contents
+
 [Structure](#Structure) 
-
 [Indexing](#Indexing)  
-
 [Matching](#Matching)
-
 [Evaluate IR Systems](#Evaluate-IR-Systems)  
 
 
@@ -18,7 +16,7 @@
 
 From the above diagram, it is clear that a user who needs information will have to formulate a request in the form of a query in natural language. After that, the IR system will return output by retrieving the relevant output, in the form of documents, about the required information.
 
-The step by step procedure of these systems are as follows:
+**The step by step procedure of these systems are as follows:**
 
 - Indexing the collection of documents.
 
@@ -28,7 +26,7 @@ The step by step procedure of these systems are as follows:
 
 - Listing the results in order of relevancy.
 
-### Retrieval Systems consist of mainly two processes:
+**Retrieval Systems consist of mainly two processes:**
 
 - Indexing
 
@@ -56,6 +54,10 @@ The specificity of a term can be quantified as an inverse function of the number
 
 The ***tf–idf*** is the product of two statistics, term frequency and inverse document frequency. There are various ways for determining the exact values of both statistics.
 
+### ***Transforming documents to  matrix***
+![Term-Frequency-Inverse-Document-Frequency-TF-IDF](https://user-images.githubusercontent.com/73588285/172479853-5da93683-f190-40bb-81a4-be8b8ba1dea4.png)
+
+
 For more info check tf-idf in [wiki-pedia](https://en.wikipedia.org/wiki/Tf%E2%80%93idf).
 
 
@@ -73,6 +75,26 @@ For more info check tf-idf in [wiki-pedia](https://en.wikipedia.org/wiki/Tf%E2%8
 
 ## Matching
 
+It is the process of finding a measure of similarity between two text representations.
+
+Ranked list of documents ordered by similarity to the query where the similarity between a query and a document is computed using a metric on the respective vectors.
+
+The similarity measure of a document vector to a query vector is usually the cosine of the angle between them.
+
+![36r1U](https://user-images.githubusercontent.com/73588285/172480297-e2f0038c-5220-4f98-8c1a-62ab53c53e40.png)
+
 ## Evaluate IR Systems
+
+The two common effective measures for evaluating IR systems are as follows:
+
+- Precision
+- Recall
+- Mean Average Precision (MAP)
+
+
+![Precision+and+Recall+retrieved+not+retrieved+relevant+irrelevant](https://user-images.githubusercontent.com/73588285/172480818-259ef3c0-4b24-4baf-8e7d-cbd560574d82.jpg)
+
+![XLpof](https://user-images.githubusercontent.com/73588285/172481161-cdaeba00-93af-47ee-b63c-92d17f31e0ae.png)
+
 
 
