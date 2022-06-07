@@ -1,9 +1,12 @@
 # IR-System
 
 ##### Table of Contents  
-[Structure](#Structure)  
+[Structure](#Structure) 
+
 [Indexing](#Indexing)  
+
 [Matching](#Matching)
+
 [Evaluate IR Systems](#Evaluate-IR-Systems)  
 
 
@@ -35,10 +38,38 @@ The step by step procedure of these systems are as follows:
 It is the process of selecting terms to represent a text.
 
 The common Indexing Techniques: ***Vector space model***
-
-. In this model, the index representations (documents) and the queries are represented by vectors in a T dimensional
+Vector space model or term vector model is an algebraic model for representing text documents (and any objects, in general) as [vectors](https://en.wikipedia.org/wiki/Vector_space) of identifiers (such as index terms).
 
 Each dimension corresponds to a separate term. If a term occurs in the document, its value in the vector is non-zero. Several different ways of computing these values, also known as (term) weights, have been developed. One of the best known schemes is tf-idf weighting
+
+Vector operations can be used to compare documents with queries.
+
+The model is known as term frequency-inverse document frequency model.
+
+### ***Term frequency***
+
+The weight of a term that occurs in a document is simply proportional to the term frequency.
+
+### ***Inverse document frequency***
+
+The specificity of a term can be quantified as an inverse function of the number of documents in which it occurs.
+
+The ***tf–idf*** is the product of two statistics, term frequency and inverse document frequency. There are various ways for determining the exact values of both statistics.
+
+For more info check tf-idf in [wiki-pedia](https://en.wikipedia.org/wiki/Tf%E2%80%93idf).
+
+
+### Data cleanning
+
+1. Rmoving white spaces
+2. Removing punctuation
+3. Replace bruckets whith white space
+4. Tokenization of string
+5. Removing frequent words
+6. Removing stop wrods
+7. Formatting multi-form names to one form
+8. detecting and formatting dates
+9. Stemming
 
 ## Matching
 
