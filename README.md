@@ -2,17 +2,27 @@
 
 ##### Table of Contents
 
-[Structure](#Structure) 
-
-[Indexing](#Indexing)  
-
-[Matching](#Matching)
-
-[Evaluate IR Systems](#Evaluate-IR-Systems)  
+1. [Project Structure](#Project-Structure) 
+2. [Basics of IR Systems](#Basics-of-IR-Systems) 
+    1. [Indexing](#Indexing)  
+    2. [Matching](#Matching)
+3. [Evaluate IR Systems](#Evaluate-IR-Systems)  
 
 
 
-## Structure
+## Project Structure
+There is three sperated folder:
+- View contains UI of IR system
+- Utils contains tools for manipulating and processing string
+- Models represent data form
+
+Article is class for storing doucments data.
+State class data source file which contains names with multi-formats.
+Verbs class data source file which contains irregular english verbs.
+
+Homeview main window of our system provides search box and the results box
+Articleview sperate window that describe one article (content - title - authors)
+
 
 ## Basics of IR Systems
 <img width="546" alt="pasted image 0" src="https://user-images.githubusercontent.com/73588285/172468994-372f20dd-414f-41a1-8626-fe195c48ee5c.png">
