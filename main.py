@@ -9,23 +9,24 @@ from Utils.parser import parse_train_data, parse_test_data, parse_relevant_dic
 from Utils.search import match
 import Views.HomeView as homeView
 
-# text = """Session 19 of the ACM 20 th Anniversary Conference
-# on August 31, 1967, was entitled Education,
-# Design Experiments, and Computer Appreciation.  Its second
-# half consisted of a panel discussion on computer
-# appreciation, organized and chaired by Elliot I. Organick.
-#  The four panelists were Charles H. Davidson,
-# Bernard A. Galler, Richard, W. Hamming, and Alan J. Perlis.
-# Function Minimization (Algorithm 251 [E4]), costs less than $3000."""
+text = """Session 19 of the ACM 20 th Anniversary Conference
+on August 31, 1967, was entitled Education,
+Design Experiments, and Computer Appreciation.  Its second
+half consisted of a panel discussion on computer
+appreciation, organized and chaired by Elliot I. Organick.
+ The four panelists were Charles H. Davidson,
+Bernard A. Galler, Richard, W. Hamming, and Alan J. Perlis.
+Function Minimization (Algorithm 251 [E4]), costs less than $3000."""
+
 
 # matches = datefinder.find_dates(text)
 # for match in matches:
 #     print(match)
 
-# for item in sc.spell_check(norm.tokenize_lower(string_with_dates)).items():
-#     print(item)
+# for item in sc.spell_check(norm.tokenize_lower(text)).items():
+#     print(item[1][0])
 
-# print(sc.synonym_list(norm.tokenize_lower(string_with_dates)))
+# print(sc.synonym_list(norm.tokenize_lower(text)))
 
 
 articles = parse_train_data()
@@ -102,7 +103,6 @@ print(doc_vector.shape)
 
 homeView.show(articles, vectorizerX, doc_vector)
 
-
 query = """ I am interested in articles written either by Prieve or Udo Pooch
 Prieve, B.
 Pooch, U."""
@@ -110,6 +110,7 @@ Pooch, U."""
 relevant_documents_retrieved = match(vectorizerX, doc_vector, query)
 
 top_ten = relevant_documents_retrieved[0:10]
+
 print(len(relevant_documents_retrieved))
 print(top_ten)
 
@@ -118,36 +119,36 @@ for i in top_ten:
     print(data)
 
 measure(cleaned_test_corpus, doc_vector, relevant_dic, vectorizerX)
-
-# building 10 clusters
-model = create_clusters(doc_vector)
-
-# print top term for each cluster
-top_term_per_cluster(model, vectorizerX)
-
-# predicting relevant cluster
-prediction = predict_cluster(vectorizerX, model, query)
-
-index = 0
-cluster_corpus = []
-for i in model.labels_:
-    if i == prediction:
-        cluster_corpus.append(cleaned_corpus[index])
-        index = index + 1
-
-vectorizerZ = TfidfVectorizer()
-vectorizerZ.fit(cluster_corpus)
-doc_vector = vectorizerZ.transform(cluster_corpus)
-print(vectorizerZ.get_feature_names_out())
-
-print(doc_vector.shape)
-
-relevant_documents_retrieved = match(vectorizerZ, doc_vector, query)
-
-top_ten = relevant_documents_retrieved[0:5]
-print(len(relevant_documents_retrieved))
-print(top_ten)
-
-for i in top_ten:
-    data = cleaned_corpus[i]
-    print(data)
+#
+# # building 10 clusters
+# model = create_clusters(doc_vector)
+#
+# # print top term for each cluster
+# top_term_per_cluster(model, vectorizerX)
+#
+# # predicting relevant cluster
+# prediction = predict_cluster(vectorizerX, model, query)
+#
+# index = 0
+# cluster_corpus = []
+# for i in model.labels_:
+#     if i == prediction:
+#         cluster_corpus.append(cleaned_corpus[index])
+#         index = index + 1
+#
+# vectorizerZ = TfidfVectorizer()
+# vectorizerZ.fit(cluster_corpus)
+# doc_vector = vectorizerZ.transform(cluster_corpus)
+# print(vectorizerZ.get_feature_names_out())
+#
+# print(doc_vector.shape)
+#
+# relevant_documents_retrieved = match(vectorizerZ, doc_vector, query)
+#
+# top_ten = relevant_documents_retrieved[0:5]
+# print(len(relevant_documents_retrieved))
+# print(top_ten)
+#
+# for i in top_ten:
+#     data = cleaned_corpus[i]
+#     print(data)

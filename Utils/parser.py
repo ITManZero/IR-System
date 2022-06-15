@@ -4,7 +4,7 @@ from Model.Article import Article
 def parse_train_data():
     articles = []
 
-    train_data_files = ["resources/cacm/cacm.all"]
+    train_data_files = ["resources/cacm/cacm.all", "resources/CISI/CISI.ALL"]
 
     for file_path in train_data_files:
         f = open(file_path, "r")
@@ -14,7 +14,7 @@ def parse_train_data():
 
 def parse_test_data():
     i = 0
-    test_data_files = ["resources/cacm/query.text"]
+    test_data_files = ["resources/cacm/query.text", "resources/CISI/CISI.QRY"]
     queries = []
     for file_path in test_data_files:
         f = open(file_path, "r")

@@ -16,17 +16,10 @@ def spell_check(words):
     return error_dict
 
 
-def synonym_list(processed_query):
-    # returns final query after adding relevant synonyms.
-    final_query_words = []
-    for w in processed_query:
+from textblob import TextBlob
 
-        syns = wn.synsets(w)
-        names = [s.name().split('.')[0] for s in syns]
 
-        if len(names) >= 2: names = names[:2]
-        names.append(w)
-        for n in names:
-            final_query_words.append(n)
+def correct(text: str) -> str | None:
+    corrected_text = str(TextBlob(text).correct())
 
-    return final_query_words
+    return corrected_text
